@@ -1,0 +1,275 @@
+.sec-5 {
+    position: relative;
+    max-width: 100%;
+    margin: 120px 0 0;
+    padding-bottom: 196px;
+    overflow: hidden;
+    
+    .bg {
+        position: absolute;
+        width: 100%;
+        background: #333333;
+        display: block;
+        height: calc(100% - 291px);
+        z-index: -1;
+        
+    } 
+
+    .title {
+        display: grid;
+        grid-template-columns: 12.5% 3fr 3fr 1fr;
+        grid-template-areas: ". h2 . arrows";
+        padding-top: 64px;
+        margin: 0 24px; 
+
+        h2 {
+            grid-area: h2;
+            max-width: 540px; 
+
+            span {
+                color: $light-accent-text-color;
+            }
+        }
+        .slider-nav {
+            grid-area: arrows;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .arrow {
+                background: #fff;
+                display: inline-flex;
+                padding: 18px 21px;
+                border-radius: 99px;
+                outline: none;
+                transition: .2s;
+                position: relative;
+
+                svg {
+                    z-index: 1;
+                }
+
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-radius: 99px;
+                    background: $primary-red;
+                    transition: transform .2s ease;
+                    transform: scale(0);
+                    transform-origin: center center;
+                }
+                &:hover {
+                    &::before {
+                        transform: scale(1);
+                    }
+                    svg {
+                        path {
+                            stroke: #fff;
+                        }
+                    }
+                }
+                &.prev {
+                    margin-right: 8px;
+                }
+                
+            }
+        }
+    }
+    .slider-outer {
+        position: relative;
+        display: grid;
+        grid-template-columns: 12.5% 87.5%;
+        grid-template-areas: ". slider";
+        margin-top: 64px;
+        margin-left: 24px;
+        margin-right: 24px;
+        cursor: url(/wp-content/themes/autoleader/assets/slider-cursor.svg) 28 28,
+        auto;
+        
+
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin-right: 24px;
+            margin-left: auto;
+            width: 100%;
+            grid-area: slider;
+            overflow: visible;
+
+            .slider-inner {
+                    //margin: 0 24px;
+                    width: calc(100% - 48px);
+
+                .slide {
+                    //padding: 0 12px 0;
+                    padding: 0;
+
+
+                    .card {
+                        img {
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            flex-flow: column;
+                        }
+                        .card-body {
+                            background: #4F4F4F;
+                            position: relative;
+                            transition: .2s ease;
+
+                            .heading {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 24px;
+                                height: 96px;
+
+                                h3 {
+                                    margin-right: 24px;
+                                }
+                                .plus-icon {
+                                    position: relative;
+                                    cursor: pointer;
+
+                                    svg {
+                                        transition: .5s ease;
+                                        transform-origin: center center;
+                                        overflow: visible;
+
+                                        path {
+                                            transition: .5s ease;
+                                            transform-origin: center center;
+                                        }
+
+                                        .white-circle {
+                                            transition: .5s ease;
+                                            transform: scale(0);
+                                            transform-origin: center center;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        svg {
+                                            .white-circle {
+                                                transform: scale(1);
+                                            }
+
+                                            path {
+                                                stroke: $secondary-graphite;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                            .description {
+                                position: absolute;
+                                padding: 24px;
+                                padding-top: 0;
+                                top: -100%;
+                                opacity: 1;
+                                background: $secondary-graphite;
+                                z-index: -1;
+                                transition: .2s ease;
+                                p {
+                                    opacity: 0;
+                                    margin: 0;
+                                    transform: translateY(-30px);
+                                    transition: .2s ease;
+                                }
+                            }
+                        }
+
+                        &.active {
+                            .card-body {
+                                background: #333333;
+
+                                .heading {
+                                    .plus-icon {
+                                        svg {
+                                            rect:not(.white-circle) {
+                                                fill: transparent;
+                                                stroke: #fff;
+                                            }
+
+                                            path {
+                                                transform: rotate(45deg);
+                                            }
+
+                                        }
+                                    }
+                                }
+                                .description {
+                                    top:96px;
+                                    opacity: 1;
+                                    p {
+                                        opacity: 1;
+                                        transform: translateY(0px);
+                                        transition-delay: .2s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-5 {
+        display: block;
+
+        .title {
+            grid-template-areas: "h2 h2 . arrows";
+        }
+
+        .slider-outer {
+            grid-template-areas: "slider slider";
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .sec-5 {
+        display: block;
+        margin: 0;
+        .title {
+            grid-template-areas: 
+            "h2 h2 h2 h2"
+            "arrows arrows arrows arrows";
+            padding-top: 24px;
+            .slider-nav {
+                justify-content: flex-start;
+                margin-top: 24px;
+            }
+        }
+        .slider-outer {
+            margin-top: 24px;
+            .slider{
+                .slider-inner {
+                    .slide {
+                        .card {
+                            .card-body {
+                                .heading {
+                                    .plus-icon {
+                                        svg {
+                                            width: 32px;
+                                            height: 32px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

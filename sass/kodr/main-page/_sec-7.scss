@@ -1,0 +1,114 @@
+.sec-7 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 0 196px;
+
+    .col {
+        position: relative;
+        background: $secondary-graphite;
+        padding-top: 100%;
+        transition: all .1s ease;
+        overflow: hidden;
+        border: 1px solid #4f4f4f;
+
+        // &.alfeco {
+        //     transform: translateY(-12px);
+        // }
+        // &.allest {
+        //     transform: translateY(12px);
+        // }
+        // &.ru196 {
+        //     transform: translateY(-12px);
+        // }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            visibility:visible;
+            opacity: 1;
+            transition: .3s ease;
+        }
+
+        .description {
+            position: absolute;
+            padding: 24px;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            opacity: 0;
+            transition: .1s ease;
+
+            h3 {
+                margin-bottom: 16px;
+            }
+            p {
+                margin: 0;
+            }
+            .links {
+                width: 100%;
+                margin-top: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background: $primary-red;
+            transform: translateY(100%);
+            transition: .3s ease;
+            z-index: 2;
+        }
+
+        &:hover {
+            //background: $primary-red;
+
+            .logo {
+                opacity: 0;
+                visibility: hidden;
+            }
+            .description {
+                opacity: 1;
+                visibility:visible;
+                z-index: 3;
+                transition: .3s ease;
+                transition-delay: .3s ;
+            }
+            &:after{
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-7 {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sec-7 {
+        display: block;
+        margin:  0 0 96px;
+    }
+}

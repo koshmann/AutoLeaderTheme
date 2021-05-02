@@ -1,0 +1,111 @@
+.sec-1 {
+    position: relative;
+    padding-top: 256px;
+    padding-bottom: 128px;
+    overflow: hidden;
+
+    .bg {
+        z-index: -1;
+
+        img {
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .bg-overlay {
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(51, 51, 51, 0.5) 0%, rgba(51, 51, 51, 0.4) 0.01%, #333333 100%);
+        }
+    }
+
+    .title {
+        display: grid;
+        grid-template-columns: 12.5% 1fr 12.5%;
+        grid-template-areas: ". title .";
+        margin: 0 24px 164px;
+        h1 {
+            grid-area:title;
+            font-size: 58px;
+            line-height: 110%;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 3fr;
+        grid-template-areas: ". p . button";
+        margin: 0 24px -32px;
+        align-items: flex-end;
+
+        p {
+            grid-area: p;
+            color:$light-accent-text-color;
+            margin-bottom: 18px;
+        }
+
+        button {
+            grid-area: button;
+            width: max-content;
+            justify-self: end;
+            z-index: 3;
+            &:before {
+                background: $secondary-gray;
+            }
+            &:after {
+                background: $primary-red;
+            }
+        }
+
+    }
+
+    .white {
+        position: absolute;
+        height: 128px;
+        width: 100%;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: auto 56%;
+        grid-template-areas: ". bg";
+        z-index: -1;
+        
+        .bg {
+            grid-area: bg;
+            background-color: #f2f2f2;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .sec-1 {
+        padding-top: 100%;
+        padding-bottom: 48px;
+        .title {
+            grid-template-areas: "title title title";
+            margin: 0 24px 24px;
+                h1 {
+                    font-size: 34px;
+                }
+        }
+        .row {
+            display: block;
+            p {
+                margin-bottom: 128px;
+            }
+        }
+        .white {
+            grid-template-areas: "bg bg";
+            height: 48px;
+        }
+    }
+}

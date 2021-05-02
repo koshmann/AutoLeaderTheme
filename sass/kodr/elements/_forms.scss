@@ -1,0 +1,123 @@
+input, textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    border: 0;
+    outline: 0;
+    background: #F2F2F2;
+    margin-top: 24px;
+    max-height: 180px;
+    transition: .2s ease;
+
+   &:focus {
+       color: $primary-red;
+   } 
+}
+
+input[type=submit] {
+
+}
+
+.privacy-notice {
+    color: #828282;
+    max-width: 350px;
+    span {
+        margin: 0;
+        a {
+            display: unset !important;
+            color: $primary-red;
+            transition: color .2s ease;
+            margin: 0;
+            margin-left: 0;
+            margin-right: 0;
+            text-decoration: none;
+            &:hover {
+                color: $secondary-graphite;
+            }
+        }
+    }
+}
+
+.wpcf7 .ajax-loader {
+    display: none !important;
+}
+.wpcf7-response-output {
+    margin: 0 24px 24px;
+    padding: 24px;
+}
+.wpcf7-not-valid-tip {
+    margin-left: 24px;
+    margin-top: 8px;
+}
+
+.codedropz-upload-wrapper {
+    .codedropz-upload-handler {
+        border: 2px dashed #e0e0e0;
+        border-radius: 0;
+        margin-bottom: 0;
+        .codedropz-upload-container {
+            padding: 24px;
+            .codedropz-upload-inner {
+                white-space: normal;
+
+                h4 {
+                    color: $dark-accent-text-color;
+                }
+                span {
+                    color: $dark-accent-text-color;
+                    display: block;
+                    margin: 16px 0;
+                }
+                a.cd-upload-btn {
+                    display: inline-flex !important;
+                    align-items: center;
+                    color: $dark-accent-text-color;
+                    transition: .2s ease;
+                    
+                    &::after {
+                        content: "";
+                        width: 22px;
+                        height: 22px;
+                        background: url('/wp-content/themes/autoleader/assets/plus.svg');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        margin-left: 8px;
+                        transition: .2s ease;
+                        filter: grayscale(1);
+                    }
+
+                    &:hover {
+                        color: $secondary-graphite;
+                        &::after {
+                            filter: grayscale(0);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+@media (max-width: 768px) {
+    .codedropz-upload-wrapper {
+        .codedropz-upload-handler {
+
+            .codedropz-upload-container {
+
+
+                .codedropz-upload-inner {
+
+                    h4 {
+                        display: none;
+                    }
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

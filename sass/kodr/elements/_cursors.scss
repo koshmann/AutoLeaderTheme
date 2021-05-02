@@ -1,0 +1,36 @@
+.pointer {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    border-radius: 99px;
+    background: $primary-red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 14px;
+    pointer-events: none;
+    z-index: 999;
+    will-change: transform;
+    transform-style: preserve-3d;
+    //transition: .2s ease;
+
+    svg {
+        transition: .2s ease;
+    }
+
+    &.mousedown {
+
+        svg.l {
+            transform: translateX(-4px);
+        }
+        svg.r {
+            transform: translateX(4px);
+        }
+    }
+    
+
+    &.hidden {
+        visibility: hidden;
+        transform: scale(0);
+    }
+}

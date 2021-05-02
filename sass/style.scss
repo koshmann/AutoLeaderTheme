@@ -1,0 +1,65 @@
+/*!
+Theme Name: autoleader
+Theme URI: https://kodr.agency/
+Author: KODR Agency
+Author URI: https: //kodr.agency/
+Version: 4.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: autoleader
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+
+/* Normalize
+--------------------------------------------- */
+@import "kodr/normalize/modern-normalize";
+
+@import "kodr/general/vars";
+@import "kodr/general/typography";
+@import "kodr/general/dark";
+@import "kodr/general/ankors";
+
+/* layout
+--------------------------------------------- */
+@import "kodr/general/layout";
+
+/* Elements  
+--------------------------------------------- */
+@import "kodr/elements/buttons-links";
+@import "kodr/elements/tabs";
+@import "kodr/elements/dropdown";
+@import "kodr/elements/overlay";
+@import "kodr/elements/curtain";
+@import "kodr/elements/cursors";
+@import "kodr/elements/forms";
+@import "kodr/elements/scrollbars";
+
+/* Swiper
+--------------------------------------------- */
+@import "kodr/swiper/swiper";
+@import "kodr/swiper/scrollbar";
+
+
+@import "kodr/header";
+@import "kodr/footer"; 
+@import "kodr/page";
+
+
+@import "kodr/main-page/sec-1";
+@import "kodr/main-page/sec-2";
+@import "kodr/main-page/sec-3";
+@import "kodr/main-page/sec-4";
+@import "kodr/main-page/sec-5";
+@import "kodr/main-page/sec-6";
+@import "kodr/main-page/sec-7";
+@import "kodr/main-page/sec-8";
+@import "kodr/main-page/sec-9";
+@import "kodr/main-page/sec-10";
+
+/* Blog
+--------------------------------------------- */
+@import "kodr/blog/index";
+@import "kodr/blog/single-post";

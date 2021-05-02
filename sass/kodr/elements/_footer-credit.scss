@@ -1,0 +1,34 @@
+a {
+    display: inline-flex;
+    align-items: center;
+    color: #f2f2f2;
+    text-decoration: none;
+
+    span {
+        margin-right: 8px;
+        transition: .3s ease;
+    }
+    .footer-logo {
+        .logo-dot {
+            transition: .3s ease;
+        }
+    }
+
+    &:not(:hover) {
+        span {
+            color: $dark-accent-text-color;
+        }
+        .footer-logo {
+            .logo-border {
+                fill: #828282;
+            }
+
+            .logo-dot {
+                fill: #5B5B5B;
+                r: 4px;
+                cx: 13px;
+            }
+        }
+    }
+
+}

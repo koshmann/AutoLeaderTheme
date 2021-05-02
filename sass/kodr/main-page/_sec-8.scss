@@ -1,0 +1,187 @@
+.sec-8 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 12.5% 1fr 1fr 12.5%;
+    grid-template-areas: ". col-1 col-2 ." ". maps maps .";
+    margin: 120px 24px 196px;
+
+    .text-col {
+        grid-area: col-1;
+        margin-right: 48px;
+        max-width: 520px;
+
+        h2 {
+            margin-bottom: 32px;
+
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+
+        p {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+
+        ul {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            li {
+                span {
+                    color: $dark-accent-text-color;
+                }
+            }
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+    }
+
+    .map-tabs-col {
+        grid-area: col-2;
+        display: flex;
+        flex-flow: column;
+
+        .tabs {
+            margin: 0 auto 64px;
+        }
+
+        .dropdown {
+            display: none;
+            margin: 0 auto 64px;
+        }
+
+    }
+
+    .maps {
+        grid-area: maps;
+
+        div {
+            display: none;
+            text-align: center;
+            
+            &.active {
+                display: block;
+            }
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            max-width: 1000px;
+            margin: 0 auto;
+
+            g {
+                .Points {
+                    //point
+                    g {
+                        position: relative;
+                        transform-box: fill-box;
+                        cursor: pointer;
+
+                        //plus
+                        g:first-child {
+                            transition: .2s ease;
+                            position: relative;
+
+                            rect {
+                                transition: .2s ease;
+                            }
+
+                            path {
+                                transition: .2s ease;
+                                transform-origin: center center;
+                                transform-box: fill-box;
+                            }
+
+                            &:hover {
+                                rect {
+                                    fill: #fff;
+                                }
+
+                                path {
+                                    stroke: $dark-text-color;
+                                }
+                            }
+                        }
+
+                        &.active {
+                            g:first-child {
+                                rect {
+                                    fill: #fff;
+                                }
+
+                                path {
+                                    transform: rotate(45deg);
+                                    stroke: $dark-text-color;
+                                }
+                            }
+
+                            g:last-child {
+                                display: block;
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                        //label
+                        g:last-child {
+                            display: none;
+                            visibility: hidden;
+                            opacity: 0;
+                            z-index: 99;
+                            transition: opacity .3s ease;
+                        }
+
+                        //group-hover
+                        // &:hover {
+                        //     z-index: 99;
+
+                        //     g:last-child {
+                        //         display: block;
+                        //         visibility: visible;
+                        //         opacity: 1;
+                        //     }
+                        // }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-8 {
+        grid-template-areas: 
+        "col-1 col-1 col-2 col-2"
+        "maps maps maps maps";
+    }
+}
+
+@media (max-width: 480px) {
+    .sec-8 {
+        margin: 64px 24px 96px;
+        display: block;
+        .map-tabs-col {
+            .tabs {
+                display: none;
+            }
+            .dropdown {
+                display: block;
+            }
+        }
+    }
+}
+

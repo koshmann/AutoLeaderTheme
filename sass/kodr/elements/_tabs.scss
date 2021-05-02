@@ -1,0 +1,34 @@
+.tabs {
+    background-color: #fff;
+    border-radius: 99px;
+    padding: 4px;
+    display: inline-flex;
+
+    .tab {
+        padding: 12px 20px;
+        font-size: 14px;
+        white-space: nowrap;
+        border-radius: 99px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: .3s ease;
+
+        &:hover {
+            background: #f2f2f2;
+        }
+
+        &.active {
+            background: $secondary-graphite;
+            color: #fff;
+        }
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .tabs {
+        
+    }
+}

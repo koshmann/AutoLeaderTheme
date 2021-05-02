@@ -1,0 +1,244 @@
+#footer {
+    background: $secondary-graphite;
+
+    #footer-logo {
+        background-color: #E71923;
+        padding: 20px 24px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .footer-top-grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr 2fr 2fr;
+        grid-template-areas: ". menu contact cta";
+        margin: 0 24px 0;
+
+        .menu {
+            grid-area: menu;
+            margin-left: 24px;
+
+            .title {
+                color: $dark-accent-text-color;
+                font-size: 12px;
+                margin-bottom: 24px;
+                margin-top: 0;
+                
+            }
+            .flex {
+                display: flex;
+
+                ul {
+                    margin: 0;
+                    margin-right: 64px;
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        padding: 8px 0;
+                        a {
+                            text-decoration: none;
+                            &:hover {
+                                color: $light-accent-text-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact {
+            grid-area: contact;
+            display: flex;
+            flex-flow: column;
+
+            .title {
+                color: $dark-accent-text-color;
+                font-size: 12px;
+                margin-bottom: 24px;
+                margin-top: 0;
+
+            }
+
+            .adress {
+                margin-bottom: 16px;
+                p {
+                    margin: 0;
+                }
+            }
+            .phone {
+                margin-bottom: 16px;
+                text-decoration: none;
+                &:hover {
+                    color: $light-accent-text-color;
+                }
+            }
+            .email {
+                margin-bottom: 32px;
+                text-decoration: none;
+                &:hover {
+                    color: $light-accent-text-color;
+                }
+            }
+        }
+
+        .cta {
+            grid-area: cta;
+            display: flex;
+            justify-content: flex-end;
+            button {
+                span {
+                    position: relative;
+                    z-index: 3;
+                }
+                svg {
+                    position: relative;
+                    z-index: 3;
+                }
+
+                &::before {
+                    background: $primary-red;
+                    z-index: 1;
+                }
+                &::after {
+                    background-color: $secondary-gray;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+
+    .divider {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        grid-template-areas: ". hr";
+        margin: 0 24px 0;
+        position: relative;
+        .hr {
+            grid-area: hr;
+            margin-left: 24px;
+
+            hr {
+                width: 100%;
+                border: 0;
+                border-top: 1px solid $secondary-gray;
+                margin-top: 64px;
+                margin-bottom: 64px;
+            }
+        }
+    }
+    
+
+    .footer-bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 3fr 4fr;
+        grid-template-areas: ". signup .";
+        margin: 0 24px 0;
+
+        .newsletter-signup {
+            margin-left: 24px;
+            grid-area: signup;
+            .form {
+                .col-body {
+                    display: flex;
+                    align-items: center;
+                        
+                    input {
+                        background: transparent;
+                        border: 1px solid $secondary-gray;
+                        color: #bdbdbd;
+                        &::placeholder {
+                            color: #bdbdbd;
+                        }
+                    
+                    }
+                    button {
+                        margin-left: 16px;
+                        margin-top: 24px;
+                        flex: none;
+                        z-index: 4;
+                    }
+                }
+            }
+        }
+    }
+
+    .absolute-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 12px;
+        padding: 24px 0;
+        margin: 64px 24px 0;
+        border-top: 1px solid $secondary-gray;
+        color: $dark-accent-text-color;
+
+        .copyright {
+            margin: 0;
+
+        }
+        .policy {
+            text-align: center;
+            color: $dark-accent-text-color;
+            text-decoration: none;
+
+        }
+        .credit {
+            text-align: right;
+            @import "elements/footer-credit";
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    #footer {
+        .footer-top-grid {
+            margin-top: 24px;
+            grid-template-columns: 50% 50%;
+            grid-template-areas: 
+            " contact menu"
+            "cta .";
+
+            .menu {
+                margin-left: 0;
+            }
+            .contact {
+                margin-top: 48px;
+            }
+            .cta {
+                justify-content: flex-start;
+            }
+        }
+        .divider {
+            grid-template-areas: "hr hr";
+            .hr {
+                margin-left: 0;
+            }
+        }
+       .footer-bottom-grid {
+            grid-template-areas: "signup signup signup";
+            .newsletter-signup {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #footer {
+        .footer-top-grid {
+            display: block;
+        }
+        .absolute-footer {
+            display: block;
+            .policy {
+                margin: 16px 0;
+                display: block;
+                text-align: left;
+            }
+            .credit {
+                text-align: left;
+            }
+        }
+    }
+} 

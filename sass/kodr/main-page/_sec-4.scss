@@ -1,0 +1,125 @@
+.sec-4 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 12.5% 3fr 4fr;
+    grid-template-areas: ". col-1 col-2";
+    margin: 120px 24px 196px;
+
+    .text-col {
+        grid-area: col-1;
+        margin-right: 48px;
+        align-self: center;
+        max-width: 520px;
+
+        h2 {
+            margin-bottom: 32px;
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+        p {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+        ul {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            li {
+                span {
+                    color: $dark-accent-text-color;
+                }
+            }
+        }
+
+        button {
+            margin-top: 1rem;
+        }
+    }
+
+    .graph-col {
+        grid-area: col-2;
+        display: flex;
+        flex-flow: column;
+
+        .tabs {
+            margin: 0 auto 64px;
+        }
+        .dropdown { 
+            display: none;
+            margin: 0 auto 64px;
+        }
+  
+        .chart {
+            width: 100%;
+            svg {
+                width: 100%;
+                height: auto;
+            } 
+        }
+
+        .chart-description {
+            max-width: 300px; 
+            margin-left: 38px;
+            margin-top: 32px;
+            padding: 0 32px;
+            position: relative;
+
+            &.inventions {
+                max-width: 395px;
+            } 
+
+            p { 
+                margin-top: 0;
+                margin-bottom: 0;
+                span {
+                    color: $primary-red;
+                }
+                &:before {
+                    content: "";
+                    height: 2px;
+                    width: 24px;
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                    border-radius: 99px;
+                    background-color: $primary-red;
+                }
+            }
+        }
+    } 
+}
+@media (max-width: 768px) {
+    .sec-4 {
+        display: block;
+        margin: 96px 24px 96px;
+        
+        .text-col {
+            margin-bottom: 64px;
+            margin-right: 0;
+        }
+        .graph-col {
+            .tabs {
+                display: none;
+            }
+            .dropdown {
+                display: block;
+                margin: 0 auto 48px;
+            }
+            .chart-description {
+                max-width: 75%;
+                margin-left: 20px;
+            }
+            
+        }
+    }
+}

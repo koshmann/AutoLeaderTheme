@@ -1,0 +1,30 @@
+body {
+    background-color: #f2f2f2;
+    overflow: overlay;
+}
+
+.wrapper { 
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+}
+
+#header {
+    grid-area: header;
+}
+
+#content {
+    grid-area: content;
+    //overflow: hidden;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+// html {
+//     scroll-behavior: smooth;
+// }

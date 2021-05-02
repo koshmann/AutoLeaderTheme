@@ -1,0 +1,50 @@
+.sec-10 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 12.5% 1fr 1fr 12.5%;
+    grid-template-areas: ". col-1 col-2 .";
+    margin: 120px 24px 196px;
+
+    .title {
+        grid-area: col-1;
+        margin-bottom: 24px;
+        margin-right: 48px;
+        max-width: 520px;
+
+        h2 {
+            margin-bottom: 24px;
+
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+
+    }
+
+    .text {
+        grid-area: col-2;
+        margin-left: 24px;
+
+        p {
+            margin-top: 0;
+            span {
+                color: $dark-accent-text-color;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-10 {
+        grid-template-areas: "col-1 col-1 col-2 col-2";
+        display: block;
+        margin: 64px 24px 96px;
+        .title {
+            margin-right: 0;
+            margin-bottom: 32px;
+        }
+        .text {
+            margin-left: 0;
+        }
+    }
+}
