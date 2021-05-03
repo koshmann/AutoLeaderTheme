@@ -126,7 +126,7 @@ get_header();
     </div>
 
     <div class="pagination">
-        <?php the_posts_navigation(); ?>
+        <?php wpex_pagination(); ?>
     </div>
 
     <?php else :

@@ -157,7 +157,7 @@
         <div class="curtains"
         x-data="{ curtain: false }"
         :class="{ 'active': curtain }"
-        @curtain.window="curtain = $event.detail.curtain, setTimeout( () => { curtain = !curtain }, 2000)">
+        @curtain.window="curtain = $event.detail.curtain, header.classList.add('sticky'), setTimeout( () => { curtain = !curtain }, 2000)">
             <div class="curtain-1"></div>
             <div class="curtain-2"></div>
         </div>

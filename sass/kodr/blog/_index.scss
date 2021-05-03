@@ -69,7 +69,7 @@ section.posts-index {
     position: relative;
     display: grid;
     grid-template-columns: 12.5% 87.5%;
-    grid-template-areas: ". filters"". posts-grid";
+    grid-template-areas: ". filters"". posts-grid"". pagination";
     margin-top: 64px;
     margin: 0 24px;
 
@@ -217,6 +217,67 @@ section.posts-index {
         }
 
     }
+}
+
+section.posts-index .pagination {
+    grid-area: pagination;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+section.posts-index .pagination ul.page-numbers {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+section.posts-index .pagination ul.page-numbers li {
+    margin-right: 16px;
+}
+
+section.posts-index .pagination ul.page-numbers li span,
+section.posts-index .pagination ul.page-numbers li a {
+    padding: 16px;
+    background: #fff;
+    border-radius: 99px;
+    text-decoration: none;
+    color: #333333;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease;
+    position: relative;
+    z-index: 3;
+}
+
+section.posts-index .pagination ul.page-numbers li span[aria-current="page"] {
+    background: #333333;
+    color: #fff;
+}
+
+section.posts-index .pagination ul.page-numbers li a::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 99px;
+    background: #E71923;
+    transition: transform .2s ease;
+    transform: scale(0);
+    transform-origin: center center;
+    z-index: -1;
+}
+
+section.posts-index .pagination ul.page-numbers li a:hover {
+    color: #fff;
+}
+
+section.posts-index .pagination ul.page-numbers li a:hover::before {
+    transform: scale(1);
 }
 
 @media (max-width: 768px) {
