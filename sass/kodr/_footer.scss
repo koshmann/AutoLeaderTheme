@@ -80,6 +80,16 @@
                     color: $light-accent-text-color;
                 }
             }
+			.recvisites {
+				margin-bottom: 48px;
+				.title {
+					color: $dark-accent-text-color;
+					font-size: 12px;
+					margin-bottom: 36px;
+					margin-top: 0;
+	
+				}
+			}
         }
 
         .cta {

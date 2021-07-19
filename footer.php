@@ -87,25 +87,41 @@
                 </div>
 
                 <div class="contact">
+					<div class="title small">
+						<p>Головной офис</p>
+					</div>
+					<div class="adress">
+						<p>г. Екатеринбург, ул Малышева 44, 5 этаж</p>
+					</div>
+					<a href="tel:83433721299" class="phone">8 (343) 372-12-99</a>
+					<a href="mailto:info@al-ekb.ru" class="email">info@al-ekb.ru</a>
 
-                <div class="title small">
-                    <p>Головной офис</p>
-                </div>
-                <div class="adress">
-                    <p>г. Екатеринбург, ул Малышева 44, 5 этаж</p>
-                </div>
-                <a href="tel:83433721299" class="phone">8 (343) 372-12-99</a>
-                <a href="mailto:info@al-ekb.ru" class="email">info@al-ekb.ru</a>
-                </div>
+					<div class="recvisites">
+						<div class="title small">
+							<p>Реквизиты</p>
+						</div>
+						<div class="adress">
+							<p>ООО «Компания Авто Лидер»</p>
+						</div>
+						<div class="adress">
+							<p>Юридический адрес: 620057, г. Екатеринбург, ул. Совхозная 20, литер ББ, оф. 103 </p>
+						</div>
+						<div class="adress">
+							<p>ОГРН 1136686034033</p>
+							<p>ОКПО 32118938</p>
+							<p>ИНН/КПП 6686037651\668601001 </p>
+						</div>
+					</div>
+				</div>
 
-                <div class="cta">
-                <button x-data="" @click="$dispatch('modal', { contactOpen: true, tenderOpen: false, menuOpen: false }); $dispatch('overlay', { overlay: true }); disableScroll()">
-                    <span>Написать нам</span>
-                    <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                    <path fill="#fff"
-                        d="M15.636 0C8.244 0 2.163 5.213 1.518 11.839 2.747 10.25 4.252 8.723 6.13 6.966a.386.386 0 01.514-.005c.144.129.146.34.005.472a82.575 82.575 0 00-1.43 1.372C2.896 11.083 1.236 13.067.031 15.53c-.082.168 0 .365.182.44a.39.39 0 00.15.03.367.367 0 00.332-.197c.429-.876.927-1.69 1.487-2.481 5.08-.12 9.703-2.71 12.126-6.83a.311.311 0 00-.008-.33.375.375 0 00-.313-.162h-1.347l2.416-1.265a.343.343 0 00.163-.181c.518-1.38.78-2.8.78-4.22C16 .148 15.837 0 15.636 0z" />
-                    </svg>
-                </button>
+				<div class="cta">
+					<button x-data="" @click="$dispatch('modal', { contactOpen: true, tenderOpen: false, menuOpen: false }); $dispatch('overlay', { overlay: true }); disableScroll()">
+						<span>Написать нам</span>
+						<svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+						<path fill="#fff"
+							d="M15.636 0C8.244 0 2.163 5.213 1.518 11.839 2.747 10.25 4.252 8.723 6.13 6.966a.386.386 0 01.514-.005c.144.129.146.34.005.472a82.575 82.575 0 00-1.43 1.372C2.896 11.083 1.236 13.067.031 15.53c-.082.168 0 .365.182.44a.39.39 0 00.15.03.367.367 0 00.332-.197c.429-.876.927-1.69 1.487-2.481 5.08-.12 9.703-2.71 12.126-6.83a.311.311 0 00-.008-.33.375.375 0 00-.313-.162h-1.347l2.416-1.265a.343.343 0 00.163-.181c.518-1.38.78-2.8.78-4.22C16 .148 15.837 0 15.636 0z" />
+						</svg>
+					</button>
                 </div>
 
             </div>
